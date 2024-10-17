@@ -93,7 +93,16 @@ Sample Input:
 Sample Output:
 [7, 9]
 
-
+def miss_you(array1,array2):
+	result=[]
+	for i in range(len(array2)):
+		for j in range(len(array1)):
+			if array2[i]==array1[j]:
+				break
+			if j==len(array1)-1:
+				result.append(array2[i])
+	print(sorted(result))
+miss_you([1,1,3,2,5],[1,3,9,1,5,7])
 
 ##perfectly-balanced 
 Дается массив чисел, найти в массиве такой элемент, где сумма чисел слева равна сумме чисел справа.
@@ -110,6 +119,19 @@ Sample Input:
 [1, 2, 9, 8, 5, 7]
 Sample Output:
 true
+
+def pergect(array):
+	for i in range(1,len(array)-1):
+		left=0
+		rigth=0
+		for j in range(i):
+			left+=array[j]
+		for j in range(i+1, len(array)):
+			rigth+=array[j]
+		if left==right:
+			return True
+	return False
+print(perfect([1,2,9,8,5,7]))
 
 
 
