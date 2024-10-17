@@ -136,3 +136,100 @@ Sample Input:
 Sample Output:
 [1, 2, 3]
 
+#1
+
+def compare(a, b):
+    if a>b:
+        return 1
+    elif a==b:
+        return 0
+    else:
+        return -1
+    
+a=input("First number: ")
+b=input("Second number: ")
+result=compare(a,b)
+print(result)
+
+#2
+
+def find_max(a, b, c):    
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+a, b, c = map(int, input("The input number: ").split())
+result = find_max(a, b, c)
+print(result)
+
+#3
+
+def sum(n):
+    total = 0
+    for i in range(1, n+1):
+        total += i*i
+    return total
+n=int(input())
+result = sum(n)
+print(result)
+
+#4
+
+def even_numbers():
+    for i in range(a, b+1):
+        if i % 2 == 0:
+            print(i, end=' ')
+a, b = map(int, input().split())
+even_numbers()
+
+#5
+
+def power(a,b):
+    result =1
+    for _ in range(b):
+        result *= a
+    return result
+a,b = map(int, input().split())
+result=power(a,b)
+print(result)
+
+#6
+
+def deposit(balance:float, procent:float,srok:int):
+    for i in range(srok):
+        balance += balance*procent/100
+    print (round(balance))
+deposit(1000,5,1)
+
+#7 
+
+#def find_min():
+    array = list(map(int, input().split()))
+    return min(array) if array else 0
+result = find_min()
+print(result)
+
+8
+
+def array(n):
+    return list(range(1, n+1))
+n=int(input())
+result=array(n)
+print(result)
+
+#9
+
+def sort(array):
+    n = len(array)
+    for i in range(n):
+        for j in range (0, n-i-1):
+            if array[j] > array[j+1]:
+                array[j], array[j+1] = array[j+1], array[j]
+array = [7,5,9,1,4]
+sort(array)
+for i in range(len(array)):
+    print(array[i], end=" ")
+
+
