@@ -35,3 +35,19 @@ web-server: 0
 ---
 
 ### Ответ
+server {
+    listen 80;
+    server_name example.com;
+
+    location / {
+        root /var/www/html;  
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api {
+        proxy_pass http://localhost:9090;
+        proxy_redirect off;
+        rewrite ^/api/(.*)$ /$1 break;
+    }
+}
+
