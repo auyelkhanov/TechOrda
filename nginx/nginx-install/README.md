@@ -114,3 +114,10 @@ curl http://127.0.0.1
 ---
 
 ### Ответ
+
+sudo apt install nginx
+sudo systemctl start nginx
+curl http://127.0.0.1
+
+
+
