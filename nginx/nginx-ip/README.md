@@ -22,3 +22,18 @@
 ---
 
 ### Ответ
+
+server {
+    listen 8080;
+    server_name example.com;
+
+    location /secret_word {
+        return 203 'jusan-nginx-ip';
+        default_type text/plain;
+
+        allow 192.0.0.0/20;
+        deny 192.0.0.1;
+        
+        deny all;
+    }
+}
